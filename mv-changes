@@ -76,7 +76,7 @@ if [[ "$DIRECTION" == "down" ]]; then
 else
   git commit -q --fixup=$FROM
 fi
-git commit -q -a --fixup=$TO
+git add $WHAT && git commit -q --fixup=$TO
 # do-nothing editor to get rid of user actions
 EDITOR='echo'
 git rebase --autosquash -q -i $START_REV~ || `git rebase --abort && git checkout $BRANCH && exit 1`
