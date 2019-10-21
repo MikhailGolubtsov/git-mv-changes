@@ -78,8 +78,7 @@ else
 fi
 git add $WHAT && git commit -q --fixup=$TO
 # do-nothing editor to get rid of user actions
-EDITOR='echo'
-git rebase --autosquash -q -i $START_REV~ || `git rebase --abort && git checkout $BRANCH && exit 1`
+GIT_SEQUENCE_EDITOR=: git rebase --autosquash -q -i $START_REV~ || `git rebase --abort && git checkout $BRANCH && exit 1`
 
 # and we need the second rebase to replay the rest of the branch on top of the edited history
 # $ONTO pointer depends on whether we have fixed $FROM or not
