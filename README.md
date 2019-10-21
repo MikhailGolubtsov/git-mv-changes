@@ -28,3 +28,10 @@ DESCRIPTION
       * renames
       * merge-commits
       * emptying source commit (just squash/fixup then)
+      
+
+INSTALLATION
+    
+    1. git clone https://github.com/MikhailGolubtsov/git-mv-changes.git
+    2. cd git-mv-changes
+    3. sudo cp mv-changes /usr/bin/
